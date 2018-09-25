@@ -26,4 +26,8 @@ const styles = StyleSheet.create({
   }
 });
 
-export default connect()(HomeScreen);
+const mapStateToProps = state => {
+  return { name: state.name };
+};
+
+export default connect(mapStateToProps)(HomeScreen);

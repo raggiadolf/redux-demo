@@ -1,7 +1,7 @@
 import { createStore } from "redux";
 
 const initialState = {
-  name: "GenericName"
+  name: "ADifferentGenericName"
 };
 
 const reducer = (state = initialState, action) => {
