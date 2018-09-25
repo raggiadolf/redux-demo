@@ -1,9 +1,10 @@
 import React from "react";
 import { StyleSheet, View } from "react-native";
+import { connect } from "react-redux";
 
 import { MonoText } from "../components/StyledText";
 
-export default class HomeScreen extends React.Component {
+class HomeScreen extends React.Component {
   render() {
     return (
       <View style={styles.container}>
@@ -24,3 +25,5 @@ const styles = StyleSheet.create({
     color: "rgba(100,100,100, 0.8)"
   }
 });
+
+export default connect()(HomeScreen);
