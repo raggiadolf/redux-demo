@@ -8,7 +8,9 @@ class HomeScreen extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <MonoText style={styles.codeHighlightText}>Hello, world!</MonoText>
+        <MonoText style={styles.codeHighlightText}>
+          Hello, {this.props.name}
+        </MonoText>
       </View>
     );
   }

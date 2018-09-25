@@ -1,7 +1,8 @@
 import React from "react";
 import { StyleSheet, View, Button, TextInput } from "react-native";
+import { connect } from "react-redux";
 
-export default class SettingsScreen extends React.Component {
+class SettingsScreen extends React.Component {
   constructor(props) {
     super(props);
     this.state = { text: "" };
@@ -17,7 +18,12 @@ export default class SettingsScreen extends React.Component {
         />
         <Button
           title="Submit name"
-          onPress={() => console.log(this.state.text)}
+          onPress={() =>
+            this.props.dispatch({
+              type: "UPDATE_NAME",
+              payload: { name: this.state.text || "Mr. No name provided" }
+            })
+          }
         />
       </View>
     );
@@ -35,3 +41,5 @@ const styles = StyleSheet.create({
     borderWidth: 1
   }
 });
+
+export default connect()(SettingsScreen);
